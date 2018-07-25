@@ -1,4 +1,4 @@
-# Fedora Upgrader Redux
+# Dokter's Upgrader Redux
 
 Inspired by [fedup](https://fedoraproject.org/wiki/FedUp) and my wish for Fedora releasing a rolling release option.
 
