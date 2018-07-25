@@ -4,23 +4,21 @@ Inspired by [fedup](https://fedoraproject.org/wiki/FedUp) and my wish for Fedora
 
 ## How to install
 
-`wget https://raw.githubusercontent.com/DokterW/fupr/master/install_doghum.sh`
+`wget https://raw.githubusercontent.com/DokterW/dupr/master/install_dupr.sh`
 
-`chmod +x install_fupr.sh`
+`chmod +x install_dupr.sh`
 
-`./install_fupr.sh`
+`./install_dupr.sh`
 
-## More about fupr
+## More about dupr
 
-fupr goes beyond what fedup was meant to do. It is more of an overlay of dnf to make it easier to keep your system up to date.
+dupr goes beyond what fedup was meant to do. It is more of an overlay of dnf to make it easier to keep your system up to date.
 
 Additionally it also has support for flatpak and [doghum](https://github.com/DokterW/doghum) has been merged with fupr.
 
-*fupr will eventually change name soon-ish. I just need to do some more testing and tweaking.*
-
 *Read more about the risks of installing a beta [here](https://fedoraproject.org/wiki/Upgrading).*
 
-Instead of typing _sudo dnf upgrade --refresh_, you just type _fupr update_.
+Instead of typing _sudo dnf upgrade --refresh_, you just type _dupr update_.
 
 You can also forget about typing
 ```
@@ -31,7 +29,7 @@ sudo dnf system-upgrade reboot
 Just type _fupr upgrade_, and it also checks if a new released is available before it does the system upgrade. If not, it just updates the current version you have installed.
 
 ```
-fupr <command> <args>
+dupr <command> <args>
 
 install
     Install software

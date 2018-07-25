@@ -14,7 +14,7 @@ wget -q -N --show-progress https://raw.githubusercontent.com/DokterW/dupr/master
 if [ ! -x $HOME/.dokter/dupr/start.sh ]; then
     chmod +x $HOME/.dokter/dupr/start.sh
 fi
-echo "alias fupr='$HOME/.dokter/dupr/start.sh'" >> $HOME/.bashrc
+echo "alias dupr='$HOME/.dokter/dupr/start.sh'" >> $HOME/.bashrc
 DUPRINST=$(pwd)
 rm -f $FUPRINST/install_dupr.sh
 # alias dupr='$HOME/.dokter/dupr/start.sh'
