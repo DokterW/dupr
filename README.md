@@ -57,23 +57,36 @@ help
 
 * Add ability to use a blacklist of repos you know creates an issue when you upgrade to the next version.
 * Add ability to have a whitelist of specific packages you want to update with a certain command.
-* Ability to upgrade all new bash scripts.
+* Add ability to switch to Fedora Rawhide, which makes creation of whitelist support crucial.
+* Ability to upgrade all bash scripts.
+* Add support for flatpak again (maybe).
+* Add ability to upgrade to the next version of Fedora (again).
+* Add ability for simple flags.
 
 ### Changelog
 
-#### 2017-07-24
+#### 2019-02-14
+* More or less rebuilt from scratch with a bit of copy/paste.
+* Removed flatpak support for now the time being.
+* It should support the following packet managers: dnf, yum, zypper, apk & apt-get
+* Removed ability to install RPMs from github (welcome back SHatomATOR?).
+* Removed ability to upgrade to the next Fedora version (will be back before next beta is released).
+* Added the [Fedora Install Tool](https://github.com/DokterW/FedoraInstallTool) feature, because why not?
+* Rewrote the help menu.
+
+#### 2018-07-24
 * Forked fupr > dupr to remove fedora from the name of this script.
 
-#### 2017-07-24
+#### 2018-07-24
 * Added (partial) doghum support
 
-#### 2017-05-12
+#### 2018-05-12
 * Removed schedule feature. fupr will be much faster now as it won't fetch from the schedule page.
 
-#### 2017-03-24
+#### 2018-03-24
 * For the last two or three release Fedora has change how they name Beta and Final Release in their schedule. I have now removed the schedule checker. It will only show the dates from the schedule dump. Also, when doing a release upgrade it's up to you to know if it has been released or not, no check will be done. This feature might be re-added if schedule for 28 and 29 uses the same labelling.
 
-#### 2017-01-26
+#### 2018-01-26
 * Instead install you can write in, instead of update up, instead upgrade upg, instead search ~~srch~~ sr, instead of check-update chup, instead of schedule schd, instead remove rm.
 * Minor fixes.
 
