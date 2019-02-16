@@ -250,7 +250,7 @@ if [[ -n "$DUPRCOM" ]]; then
                                 duprbashdl
                             fi
                         else
-                            echo "[dupr] Latest version of $DUPRPKG v$DUPRLTS installed."
+                            echo "[dupr] Latest version of $DUPRPKG v$DUPRLTS is already installed."
                         fi
                     else
                         echo "[dupr] Package not installed."
