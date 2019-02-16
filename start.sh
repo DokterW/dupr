@@ -6,7 +6,7 @@
 # By running this script you agree to the license terms.
 # Config ----------------------------------------------------------------------------
 DUPRNAM="dupr"
-DUPRVER="0.20"
+DUPRVER="0.21"
 #DUPRFLG=$(echo "$1" | egrep '^\-\-?')
 #if [[ -n "$DUPRFLG" ]]; then
 #    DUPRFLG=$1
@@ -125,7 +125,7 @@ if [[ -n "$DUPRCOM" ]]; then
                     echo "[dupr] install $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO dnf install $DUPRPKG
                 elif [[ "$DUPRARG" = "up" ]] || [[ "$DUPRARG" = "update" ]]; then
-                    echo "[dupr] upgrading $DUPROS $DUPROSV"
+                    echo "[dupr] updating $DUPROS $DUPROSV"
                     $DUPRSUDO dnf upgrade $DUPRPKG
                 elif [[ "$DUPRARG" = "rm" ]] || [[ "$DUPRARG" = "remove" ]]; then
                     echo "[dupr] removing $DUPRPKG on $DUPROS $DUPROSV"
@@ -141,7 +141,7 @@ if [[ -n "$DUPRCOM" ]]; then
                     echo "[dupr] install $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO yum install $DUPRPKG
                 elif [[ "$DUPRARG" = "up" ]] || [[ "$DUPRARG" = "update" ]]; then
-                    echo "[dupr] upgrading $DUPROS $DUPROSV"
+                    echo "[dupr] updating $DUPROS $DUPROSV"
                     $DUPRSUDO yum update $DUPRPKG
                 elif [[ "$DUPRARG" = "rm" ]] || [[ "$DUPRARG" = "remove" ]]; then
                     echo "[dupr] removing $DUPRPKG on $DUPROS $DUPROSV"
@@ -154,48 +154,48 @@ if [[ -n "$DUPRCOM" ]]; then
                 fi
             elif [[ "$DUPROSI" = "debian" ]]; then
                 if [[ "$DUPRARG" = "in" ]] || [[ "$DUPRARG" = "install" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" install $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO apt-get install $DUPRPKG
                 elif [[ "$DUPRARG" = "up" ]] || [[ "$DUPRARG" = "update" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" updating $DUPROS $DUPROSV"
                     $DUPRSUDO apt-get update && $DUPRSUDO apt-get upgrade
                 elif [[ "$DUPRARG" = "rm" ]] || [[ "$DUPRARG" = "remove" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" removing $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO apt-get remove $DUPRPKG
                 elif [[ "$DUPRARG" = "sr" ]] || [[ "$DUPRARG" = "search" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" searching for $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO apt-cache search $DUPRPKG
                 else
                     dupr_wrong_cmd
                 fi
             elif [[ "$DUPROSI" = "opensuse" ]]; then
                 if [[ "$DUPRARG" = "in" ]] || [[ "$DUPRARG" = "install" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" install $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO zypper install $DUPRPKG
                 elif [[ "$DUPRARG" = "up" ]] || [[ "$DUPRARG" = "update" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" updating $DUPROS $DUPROSV"
                     $DUPRSUDO zypper upgrade $DUPRPKG
                 elif [[ "$DUPRARG" = "rm" ]] || [[ "$DUPRARG" = "remove" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" removing $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO zypper remove $DUPRPKG
                 elif [[ "$DUPRARG" = "sr" ]] || [[ "$DUPRARG" = "search" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" searching for $DUPRPKG on $DUPROS $DUPROSV"
                     $DUPRSUDO zypper search $DUPRPKG
                 else
                     dupr_wrong_cmd
                 fi
             elif [[ "$DUPROSI" = "alpine" ]]; then
                 if [[ "$DUPRARG" = "in" ]] || [[ "$DUPRARG" = "install" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" install $DUPRPKG on $DUPROS $DUPROSV"
                     apk add $DUPRPKG
                 elif [[ "$DUPRARG" = "up" ]] || [[ "$DUPRARG" = "update" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" updating $DUPROS $DUPROSV"
                     apk update && apk upgrade
                 elif [[ "$DUPRARG" = "rm" ]] || [[ "$DUPRARG" = "remove" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" removing $DUPRPKG on $DUPROS $DUPROSV"
                     apk del $DUPRPKG
                 elif [[ "$DUPRARG" = "sr" ]] || [[ "$DUPRARG" = "search" ]]; then
-                    echo "[dupr]"
+                    echo "[dupr]" searching for $DUPRPKG on $DUPROS $DUPROSV"
                     apk list $DUPRPKG
                 else
                     dupr_wrong_cmd
@@ -241,12 +241,12 @@ if [[ -n "$DUPRCOM" ]]; then
                         DUPRIND=$(cat $HOME/.dokter/$DUPRPKG/$DUPRBSN | sed -n "2p" | egrep -o '([0-9]{1,2}\.)*[0-9]{1,2}')
                         if [[ "$DUPRLTS" != "$DUPRIND" ]]; then
                             if [[ "$DUPRARG" = "dupr" ]]; then
-                                echo "[dupr] upgrading $DUPROS $DUPROSV"
+                                echo "[dupr] updating $DUPROS $DUPROSV"
                                 wget -q -N --show-progress https://raw.githubusercontent.com/DokterW/dupr/master/upgrade_dupr.sh -P $HOME/.dokter/dupr/
                                 chmod +x $HOME/.dokter/dupr/upgrade_dupr.sh
                                 exec $HOME/.dokter/dupr/upgrade_dupr.sh
                             else
-                                echo "[dupr] upgrading $DUPROS $DUPROSV"
+                                echo "[dupr] updating $DUPROS $DUPROSV"
                                 duprbashdl
                             fi
                         else
