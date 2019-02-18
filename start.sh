@@ -1,12 +1,12 @@
 #!/bin/bash
-# dupr v0.20
+# dupr v0.22
 # Made by Dokter Waldijk
 # Dokter's Upgrader Redux makes it easier to keep your system updated.
 # Read the README.md for more info, but you will find more info here below.
 # By running this script you agree to the license terms.
 # Config ----------------------------------------------------------------------------
 DUPRNAM="dupr"
-DUPRVER="0.21"
+DUPRVER="0.22"
 #DUPRFLG=$(echo "$1" | egrep '^\-\-?')
 #if [[ -n "$DUPRFLG" ]]; then
 #    DUPRFLG=$1
@@ -303,7 +303,7 @@ if [[ -n "$DUPRCOM" ]]; then
     elif [[ "$DUPRCOM" = "extras" ]] || [[ "$DUPRCOM" = "x" ]]; then
         if [[ "$DUPROSI" = "fedora" ]]; then
             if [[ -n "$DUPRARG" ]]; then
-                if [[ "$DUPRARG" = "list" ]]; then
+                if [[ "$DUPRARG" = "list" ]] || [[ "$DUPRARG" = "l" ]]; then
                     echo "[dupr] List of extra packages/features to install"
                     if [[ ! -e /etc/yum.repos.d/rpmfusion-free.repo ]]; then
                         echo "  rpmfusion - Enable RPM Fusion repo"
@@ -326,6 +326,12 @@ if [[ -n "$DUPRCOM" ]]; then
                     if [[ ! -e /usr/src/akmods/wl-kmod*.rpm ]]; then
                         echo "  broadcom  - Broadcom Wireless drivers"
                     fi
+                elif [[ "$DUPRARG" = "help" ]] || [[ "$DUPRARG" = "h" ]]; then
+                    echo "$DUPRNAM v$DUPRVER"
+                    echo "  You are running $DUPROS $DUPROSV"
+                    echo ""
+                    echo "  dupr <option> <command>"
+                    echo "       x        list or l"
                 elif [[ "$DUPRARG" = "rpmfusion" ]]; then
                     if [ -e /etc/yum.repos.d/rpmfusion-free.repo ]; then
                         echo "[dupr] Package/feature $DUPRARG already installed."
