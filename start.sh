@@ -240,7 +240,7 @@ if [[ -n "$DUPRCOM" ]]; then
                         duprurlverfetch
                         DUPRIND=$(cat $HOME/.dokter/$DUPRPKG/$DUPRBSN | sed -n "2p" | egrep -o '([0-9]{1,2}\.)*[0-9]{1,2}')
                         if [[ "$DUPRLTS" != "$DUPRIND" ]]; then
-                            if [[ "$DUPRARG" = "dupr" ]]; then
+                            if [[ "$DUPRPKG" = "dupr" ]]; then
                                 echo "[dupr] updating $DUPROS $DUPROSV"
                                 wget -q -N --show-progress https://raw.githubusercontent.com/DokterW/dupr/master/upgrade_dupr.sh -P $HOME/.dokter/dupr/
                                 chmod +x $HOME/.dokter/dupr/upgrade_dupr.sh
