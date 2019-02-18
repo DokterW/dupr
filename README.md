@@ -14,43 +14,21 @@ Inspired by [fedup](https://fedoraproject.org/wiki/FedUp) and my wish for Fedora
 
 dupr goes beyond what fedup was meant to do. It is more of an overlay of dnf to make it easier to keep your system up to date.
 
-Additionally it also has support for flatpak and [doghum](https://github.com/DokterW/doghum) has been merged with fupr.
+~~~Additionally it also has support for flatpak and~~~ [doghum](https://github.com/DokterW/doghum) has been merged with fupr.
 
-*Read more about the risks of installing a beta [here](https://fedoraproject.org/wiki/Upgrading).*
+*Read more about the risks of installing a beta (Fedora) [here](https://fedoraproject.org/wiki/Upgrading).*
 
 Instead of typing _sudo dnf upgrade --refresh_, you just type _dupr update_.
 
-You can also forget about typing
+You can also forget about typing:
 ```
 sudo dnf upgrade --refresh
 sudo dnf system-upgrade download --releasever=XX
 sudo dnf system-upgrade reboot
 ```
-Just type _fupr upgrade_, and it also checks if a new released is available before it does the system upgrade. If not, it just updates the current version you have installed.
-
+Type below command to see the new help menu:
 ```
-dupr <command> <args>
-
-install
-    Install software
-remove
-    Remove software
-update
-    Update Fedora XX
-update pkg-name
-    Update specified package/rpm
-update
-    Update Fedora XX and reload daemon(s)
-updated pkg-name
-    Update specified package/rpm and reload daemon(s)
-check-update
-    Check for updates
-search
-    Search for packages
-upgrade
-    Upgrade to Fedora XX
-help
-    List all commands for dnf, flatpak and doghum.
+dupr help
 ```
 
 ### Roadmap
