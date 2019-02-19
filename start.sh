@@ -277,6 +277,7 @@ if [[ -n "$DUPRCOM" ]]; then
                                 wget -q -N --show-progress https://raw.githubusercontent.com/DokterW/dupr/master/upgrade_dupr.sh -P $HOME/.dokter/dupr/
                                 chmod +x $HOME/.dokter/dupr/upgrade_dupr.sh
                                 exec $HOME/.dokter/dupr/upgrade_dupr.sh
+                                exit
                             elif [[ "$DUPRPKG" != "dupr" ]]; then
                                 echo "[dupr] updating $DUPROS $DUPROSV"
                                 duprbashdl
