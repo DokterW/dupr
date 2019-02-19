@@ -14,7 +14,7 @@ Inspired by [fedup](https://fedoraproject.org/wiki/FedUp) and my wish for Fedora
 
 dupr goes beyond what fedup was meant to do. It is more of an overlay of dnf to make it easier to keep your system up to date.
 
-~~~Additionally it also has support for flatpak and~~~ [doghum](https://github.com/DokterW/doghum) has been merged with fupr.
+~~Additionally it also has support for flatpak and~~ [doghum](https://github.com/DokterW/doghum) has been merged with fupr.
 
 *Read more about the risks of installing a beta (Fedora) [here](https://fedoraproject.org/wiki/Upgrading).*
 
@@ -38,10 +38,13 @@ dupr help
 * Add ability to switch to Fedora Rawhide, which makes creation of whitelist support crucial.
 * Ability to upgrade all bash scripts.
 * Add support for flatpak again (maybe).
-* Add ability to upgrade to the next version of Fedora (again).
 * Add ability for simple flags.
 
 ### Changelog
+
+#### 2019-02-xx
+* Ability to upgrade to the next version of Fedora again.
+* General fixes.
 
 #### 2019-02-14
 * More or less rebuilt from scratch with a bit of copy/paste.
